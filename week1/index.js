@@ -2,12 +2,16 @@
 // 情境：Alex 正在健身房鍛鍊，他正在使用跑步機慢跑，請用變數描述以下狀態：
 
 // 1. 請宣告一個 `const` 變數名稱為 `alexAge`，並賦予值為 `25`。
+const alexAge = 25;
 // 2. 請宣告一個 `const` 變數名稱為 `alexMembershipID`，並賦予值為字串 `"GYM2024-12345"`。
+const alexMembershipID = "GYM2024-12345";
 // 3. 請宣告一個 `const` 變數名稱為 `isRunningOnTreadmill`，並賦予值為 `true`。
+const isRunningOnTreadmill = true;
 // 4. 使用 `console.log()` 輸出 `alexAge`、`alexMembershipID` 和 `isRunningOnTreadmill`。
+console.log(alexAge, alexMembershipID, isRunningOnTreadmill);
 
 // 1.1 範例
-const alexAge = 25;
+// const alexAge = 25;
 
 // ### 題目二：變數命名練習
 // - 瑜伽團課 - 300 元
@@ -16,16 +20,28 @@ const alexAge = 25;
 // 情境：Alex 這個月的運動預算有 3000 元
 // 請修改以下中文變數名稱，讓他符合變數語意
 
-const 變數一 = 300;
-const 變數二 = 500;
-const 變數三 = 1500;
-const 變數四 = 3000;
+const yogaCourse = 300;
+const weightTraningCourse = 500;
+const weightTraning1on1 = 1500;
+const totalBudget = 3000;
 
 // ### 題目三：變數計算
 // 呈上題，Alex 想要規劃好自己的運動課程，需符合以下三個條件，請將花費總數計算在 AlexBudget 上，一起幫幫他吧！
 // 條件一：一定至少要買 1 堂重訓團課和瑜伽團課
 // 條件二：瑜伽團課只能一次買 3 堂
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
+// console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
+
+//重訓團課至少1堂（500元）
+//瑜珈團課至少3堂（900元）
+//要讓總課程數=5 又要花費>2400元，並控制在預算3000元（承上題資訊）
+//就只能再多報一堂1on1重訓（1500元）。
+
+const AlexBudget =
+  totalBudget -
+  yogaCourse * 3 -
+  weightTraningCourse * 1 -
+  weightTraning1on1 * 1;
 
 console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 
@@ -33,11 +49,24 @@ console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 // 請參考資料夾內 q4.webp 圖片
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
 
+let bundlePrice = 2520;
+let numOfLesson = 14;
+let minPerLesson = 50;
+let pricePerLesson = 180;
+let discount = "90%";
+
 // ### 題目五：布林值與變數定義，看是否有用對 const, let
 // 情境：Alex 在往健身房的路上，望向城市的風景，請描述她看到的一切，並宣告變數與賦予值
 // 4-1. Alex 在等紅綠燈，他抬頭看一下現在是紅燈，還有 28 秒綠燈（最多 3 個宣告）
+let alexIsWaiting = true;
+let lightColor = "red";
+let timeLeft = "28";
 // 4-2. 目前一起等待的機車有 8 台
+let numOfMotor = 8;
 // 4.3. Alex 望向天空，看到天上有 5 朵白雲和 1 顆太陽
+let alexisWatchingSky = true;
+let numOfcloud = 5;
+let numOfsun = 1;
 
 // ### 題目六：情境題：簡單變數計算
 // 情境：Alex 每天都會帶著 2000cc 的水壺
@@ -50,6 +79,9 @@ console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 
 let myWater = 2000; // 水壺容量
 myWater -= 500; // 早上喝了 500cc
+myWater -= 800; // 中午又喝了 800cc
+myWater += 1000; // 下午去健身前，先裝了 1000cc 的水
+myWater -= 700; // 健身時，又喝掉了 700cc
 
 console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
@@ -62,7 +94,11 @@ console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
 let totalBill = 0;
 const machineUsePrice = 50;
+const groupClassPrice = 150;
 
+let machineUsePriceTotal = 3 * machineUsePrice;
+let groupClassesTotal = 2 * groupClassPrice;
+let total = totalBill + machineUsePriceTotal + groupClassesTotal;
 console.log(
   `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${total}元`
 );
@@ -71,20 +107,21 @@ console.log(
 // 情境：請依照以下程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 let a = 8; // 範例：宣告了一個 a 的變數，並賦予了一個 8 的數字型別
-let b = 0;
-a = 13;
-a = b + 4;
-a - b;
-b += 1;
+let b = 0; //宣告了一個 b 的變數，並賦予了一個 0 的數字型別
+a = 13; //重新定義變數a的值，賦予了一個13 的數字型別
+a = b + 4; //重新定義變數a的值，賦予了一個b+4的數字型別,即最終a的值為4
+a - b; //僅計算a-b的值，4-0=4，未重新定義任何變數
+b += 1; //b=b+1，重新定義變數b的值，賦予了一個b+1的數字型別,即最終b的值為1
+//console.log(a,b)= 4,1
 
 // ### 題目九：型別查詢
 // 請不要觀看 console.log，透過註解告知解答每個變數的型別
-let c = 'world';
-let d = 456;
-let e = c + d;
-let f = false;
-let g = d + d;
-let h = f + g;
+let c = "world"; // console.log(c)=world; c 是 string
+let d = 456; // console.log(d)=456; d 是 number
+let e = c + d; // console.log(e)=world456; e 是 string
+let f = false; //console.log(f)=flase; f 是 boolean
+let g = d + d; //console.log(g)=456456; g 是 string
+let h = f + g; //console.log(h)=false456456; h 是 string
 
 // 請從以下新增註解，告知上面每行各別是哪些型別
 // a 是 string
@@ -94,8 +131,8 @@ let h = f + g;
 // 情境：請依照程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 
-let numberArr1 = [5, 10, 15];
-let numberArr2 = numberArr1;
-numberArr2.push(20);
-numberArr2 = [25, 30, 35];
-console.log(numberArr1, numberArr2);
+let numberArr1 = [5, 10, 15]; //宣告了一個 numberArr1 的變數，並賦予了一個值為 [5, 10, 15] 的陣列型別
+let numberArr2 = numberArr1; //宣告了一個 numberArr2 的變數，與變數numberArr1同為陣列型別，指向同一記憶體，
+numberArr2.push(20); //在numberArr2的陣列最後加上一個20的值，[5, 10, 15,20] 即使用同記憶體的變數numberArr1其值也同步更改為[5, 10, 15,20]
+numberArr2 = [25, 30, 35]; //重新賦予變數numberArr2的值為[25, 30, 35] 指向新的記憶體。變數numberArr1仍指向原本的記憶體[5, 10, 15,20]
+console.log(numberArr1, numberArr2); //驗證 numberArr1,numberArr2 的值，[5, 10, 15,20]，[25, 30, 35]
